@@ -1,1 +1,18 @@
-/venv
+../../venv/
+venv/
+git add .
+# Ignorer les fichiers temporaires
+*~
+
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer les fichiers de configuration
+.config
+
+# Ignorer les dossiers générés par Node.js
+node_modules/
+
+# Ignorer les fichiers générés par l'environnement de développement
+build/
+dist/
