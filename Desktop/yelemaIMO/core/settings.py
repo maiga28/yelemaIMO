@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
-   # 'main_apps.account',
+    'main_apps.account',
     'main_apps.client',
     'main_apps.gestion',
     'allauth',
-    'allauth.account',
+  #  'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
   

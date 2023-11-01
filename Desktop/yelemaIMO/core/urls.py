@@ -20,8 +20,8 @@ from .views import index
 urlpatterns = [
 
     path('', index, name='index'),
-    path('accounts/', include('allauth.urls')),
-  #  path('account/', include('main_apps.account.urls')),
+    #path('accounts/', include('allauth.urls')),
+    path('account/', include('main_apps.account.urls')),
     path('gestion/', include('main_apps.gestion.urls')),
     path('client/', include('main_apps.client.urls')),
     
