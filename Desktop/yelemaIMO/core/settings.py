@@ -144,8 +144,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+
 COMPRESS_ROOT = BASE_DIR / 'static'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    BASE_DIR / "node_modules/tailwindcss/base.css",  # Chemin vers les fichiers statiques de Tailwind CSS
+]
+
 
 COMPRESS_ENABLED = True
 
