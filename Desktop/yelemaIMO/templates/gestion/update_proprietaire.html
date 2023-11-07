@@ -1,0 +1,51 @@
+
+{% extends '_base.html' %} {% block content %}
+    
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new product</h2>
+        <form  method="post" action="{% url 'gestion:ajouter_proprietaire' %}">
+            {% csrf_token %}
+            <!-- component -->
+<div class=" w-full flex items-center justify-center text-blue-600 bg-gray-900">
+    <div>
+      <h1 class="mb-1 font-bold text-3xl flex gap-1 items-baseline font-mono">Form UI<span class="text-sm text-purple-700">form showcase</sm></h1>
+        <div class="grid max-w-3xl gap-2 py-10 px-8 sm:grid-cols-2 bg-gray-900 rounded-md border-t-4 border-blue-600">
+            <form method="post" class="grid gap-4 mb-4 sm:grid-cols-2">
+                {% csrf_token %}
+                <div>
+                    <label for="{{ form.name.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom</label>
+                    {{ form.name }}
+                </div>
+                <div>
+                    <label for="{{ form.s_name.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prénom</label>
+                    {{ form.s_name }}
+                </div>
+                <div>
+                    <label for="{{ form.numero_telephone.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numéro de téléphone</label>
+                    {{ form.numero_telephone }}
+                </div>
+                <div>
+                    <label for="{{ form.adresse.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adresse</label>
+                    {{ form.adresse }}
+                </div>
+                <div>
+                    <label for="{{ form.email.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                    {{ form.email }}
+                </div>
+                <div class="col-span-2">
+                    <button type="submit" class="text-white bg-blue-600 border border-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 rounded-lg px-5 py-2 text-center">
+                        Ajouter propriétaire
+                    </button>
+                </div>
+            </form>
+            
+          </div>
+          </div>
+        </form>
+    </div>
+</section>
+
+{% endblock content %}
+    
+

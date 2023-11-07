@@ -145,194 +145,193 @@
     <!-- End Card -->
   </div>
   <!-- End Grid -->
-</div>
-<!-- End Card Section -->
-<!-- End Page Heading -->
-<!-- Table Section -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  <!-- Card -->
-  <div class="flex flex-col">
-    <div class="-m-1.5 overflow-x-auto">
-      <div class="p-1.5 min-w-full inline-block align-middle">
-        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-slate-900 dark:border-gray-700">
-          <!-- Header -->
-          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
-            <div>
-              <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                Liste des proprietaires
-              </h2>
-              <p class="text-sm text-gray-600 dark:text-gray-400">
-                Creer proprietaire, modifier, afficher.
-              </p>
-            </div>
-
-            <div>
-              <div class="flex gap-x-2">
-                <a  class="text-sm text-gray-600 dark:text-gray-400" href="{% url 'gestion:ajouter_proprietaire' %}">
-                  <button type="submit" class="text-gray-300 inline-flex items-center hover:text-white border border-blue-600 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-900">
-                    Ajouter proprietaire
-                </button>                                       
-                </a>
+  </div>
+  <!-- End Card Section -->
+  <!-- End Page Heading -->
+  <!-- Table Section -->
+  <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Card -->
+    <div class="flex flex-col">
+      <div class="-m-1.5 overflow-x-auto">
+        <div class="md:flex md:justify-between md:items-center p-0 min-w-full inline-block align-middle">
+          <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-slate-900 dark:border-gray-700">
+            <!-- Header -->
+            <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
+              <div>
+                <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                  Liste des proprietaires
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Creer proprietaire, modifier, afficher.
+                </p>
               </div>
-            </div>
-          </div>
-          <!-- End Header -->
 
-          <!-- Accordion 
-          <div class="border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-gray-700">
-            <button type="button" class="hs-collapse-toggle py-4 px-6 w-full flex items-center gap-2 font-semibold text-gray-800 dark:text-gray-200" id="hs-basic-collapse" data-hs-collapse="#hs-as-table-collapse">
-              <svg class="hs-collapse-open:rotate-90 w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.50598 2L10.1524 7.64645C10.3477 7.84171 10.3477 8.15829 10.1524 8.35355L4.50598 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Insights
-            </button>
-            <div id="hs-as-table-collapse" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-basic-collapse">
-              <div class="pb-4 px-6">
-                <div class="flex items-center space-x-2">
-                  <svg class="flex-shrink-0 h-5 w-5" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.1965 7.85999C15.1965 3.71785 11.8387 0.359985 7.69653 0.359985C3.5544 0.359985 0.196533 3.71785 0.196533 7.85999C0.196533 12.0021 3.5544 15.36 7.69653 15.36C11.8387 15.36 15.1965 12.0021 15.1965 7.85999Z" fill="currentColor" class="fill-blue-500"/>
-                    <path d="M10.9295 4.88618C11.1083 4.67577 11.4238 4.65019 11.6343 4.82904C11.8446 5.00788 11.8702 5.32343 11.6914 5.53383L7.44139 10.5338C7.25974 10.7475 6.93787 10.77 6.72825 10.5837L4.47825 8.5837C4.27186 8.40024 4.25327 8.0842 4.43673 7.87781C4.62019 7.67142 4.93622 7.65283 5.14261 7.83629L7.01053 9.49669L10.9295 4.88618Z" fill="currentColor" class="fill-white"/>
-                  </svg>
-                  <span class="text-sm text-gray-800 dark:text-gray-400">
-                    There are no insights for this period.
-                  </span>
+              <div>
+                <div class="flex gap-x-2">
+                  <a  class="text-sm text-gray-600 dark:text-gray-400" href="{% url 'gestion:ajouter_proprietaire' %}">
+                    <button type="submit" class="text-gray-300 inline-flex items-center hover:text-white border border-blue-600 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-900">
+                      Ajouter proprietaire
+                  </button>                                       
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
-        End Accordion -->
+            <!-- End Header -->
 
-          <!-- Table -->
-          <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-            <thead class="bg-gray-50 dark:bg-slate-900">
-              <tr>
-                <th scope="col" class="px-6 py-3 text-left">
-                  <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                      Nom
-                    </span>
-                  </div>
-                </th>
-          
-                <th scope="col" class="px-6 py-3 text-left">
-                  <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                      Prénom
-                    </span>
-                  </div>
-                </th>
-          
-                <th scope="col" class="px-6 py-3 text-left">
-                  <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                      Adresse
-                    </span>
-                  </div>
-                </th>
-          
-                <th scope="col" class="px-6 py-3 text-left">
-                  <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                      Téléphone
-                    </span>
-                  </div>
-                </th>
-          
-                <th scope="col" class="px-6 py-3 text-left">
-                  <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                      Email
-                    </span>
-                  </div>
-                </th>
-
-                <th scope="col" class="px-6 py-3 text-left">
-                  <div class="flex items-center gap-x-2">
-                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                      Action
-                    </span>
-                  </div>
-                </th>
-              </tr>
-            </thead>
-          
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-              {% for proprietaire in proprietaires %}
-              <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
-                <td class="h-px w-px whitespace-nowrap">
-                  <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.name }}</span>
-                  </div>
-                </td>
-                <td class="h-px w-px whitespace-nowrap">
-                  <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.s_name }}</span>
-                  </div>
-                </td>
-                <td class="h-px w-px whitespace-nowrap">
-                  <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.adresse }}</span>
-                  </div>
-                </td>
-                <td class="h-px w-px whitespace-nowrap">
-                  <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.numero_telephone }}</span>
-                  </div>
-                </td>
-                <td class="h-px w-px whitespace-nowrap">
-                  <div class="px-6 py-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.email }}</span>
-                  </div>
-                </td>
-                <td class="h-px w-px whitespace-nowrap"><a href="http://"></a>
-                  <div class="flex flex-auto px-6 py-2"> 
-                  <a  class="text-sm text-gray-600 dark:text-gray-400" href="{% url 'gestion:update_proprietaire' proprietaire.id %}">
-                    <button type="submit" class="text-gray-300 inline-flex items-center hover:text-white border border-blue-600 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-900">
-                      Update product
-                  </button>                                       
-                  </a>
-                  <a  class="text-sm text-gray-600 dark:text-gray-400" href="#">
-                    <button type="button" class="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
-                      <svg class="mr-1 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-                      Delete
-                  </button>                                      
-                  </a>
-                  </div>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
+            <!-- Table -->
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-slate-900">
+                <tr>
+                  <th scope="col" class="px-6 py-3 text-left">
+                    <div class="flex items-center gap-x-2">
+                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                        Nom
+                      </span>
+                    </div>
+                  </th>
             
-          </table>
-          
-          <!-- End Table -->
+                  <th scope="col" class="px-6 py-3 text-left">
+                    <div class="flex items-center gap-x-2">
+                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                        Prénom
+                      </span>
+                    </div>
+                  </th>
+            
+                  <th scope="col" class="px-6 py-3 text-left">
+                    <div class="flex items-center gap-x-2">
+                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                        Adresse
+                      </span>
+                    </div>
+                  </th>
+            
+                  <th scope="col" class="px-6 py-3 text-left">
+                    <div class="flex items-center gap-x-2">
+                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                        Téléphone
+                      </span>
+                    </div>
+                  </th>
+            
+                  <th scope="col" class="px-6 py-3 text-left">
+                    <div class="flex items-center gap-x-2">
+                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                        Email
+                      </span>
+                    </div>
+                  </th>
 
-          <!-- Footer -->
-          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-gray-700">
-            <div>
-              <p class="text-sm text-gray-600 dark:text-gray-400">
-                <span class="font-semibold text-gray-800 dark:text-gray-200">9</span> results
-              </p>
-            </div>
+                  <th scope="col" class="px-6 py-3 text-left">
+                    <div class="flex items-center gap-x-2">
+                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                        Action
+                      </span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+            
+              <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                {% for proprietaire in proprietaires %}
+                <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
+                  <td class="h-px w-px whitespace-nowrap">
+                    <div class="px-6 py-2">
+                      <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.name }}</span>
+                    </div>
+                  </td>
+                  <td class="h-px w-px whitespace-nowrap">
+                    <div class="px-6 py-2">
+                      <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.s_name }}</span>
+                    </div>
+                  </td>
+                  <td class="h-px w-px whitespace-nowrap">
+                    <div class="px-6 py-2">
+                      <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.adresse }}</span>
+                    </div>
+                  </td>
+                  <td class="h-px w-px whitespace-nowrap">
+                    <div class="px-6 py-2">
+                      <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.numero_telephone }}</span>
+                    </div>
+                  </td>
+                  <td class="h-px w-px whitespace-nowrap">
+                    <div class="px-6 py-2">
+                      <span class="text-sm text-gray-600 dark:text-gray-400">{{ proprietaire.email }}</span>
+                    </div>
+                  </td>
+                  <td class="h-px w-px whitespace-nowrap"><a href="http://"></a>
+                  <div class="flex flex-auto gap-4 px-6 py-2"> 
+                    <a  class="text-sm text-gray-600 dark:text-gray-400" href="{% url 'gestion:update_proprietaire' proprietaire.id %}">
+                      <button type="submit" class="text-gray-300 inline-flex items-center hover:text-white border border-blue-600 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-900">
+                        Update 
+                    </button>                                       
+                    </a>
+                    <a  class="text-sm text-gray-600 dark:text-gray-400" href="{% url 'gestion:supprimer_proprietaire' proprietaire.id %}">
+                      <button type="button" class="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                        <svg class="mr-1 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                        Delete
+                    </button>                                      
+                    </a>
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+              
+            </table>
+            
+            <!-- End Table -->
 
-            <div>
-              <div class="inline-flex gap-x-2">
-                <button type="button" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
-                  <svg class="w-3 h-3" width="16" height="16" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.506 1.64001L4.85953 7.28646C4.66427 7.48172 4.66427 7.79831 4.85953 7.99357L10.506 13.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  Prev
-                </button>
+            <!-- Footer -->
+  <!-- Votre code HTML existant pour l'en-tête, le contenu, etc. -->
 
-                <button type="button" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
-                  Next
-                  <svg class="w-3 h-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.50598 2L10.1524 7.64645C10.3477 7.84171 10.3477 8.15829 10.1524 8.35355L4.50598 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </button>
-              </div>
+    <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-gray-700">
+      <div>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+              <span class="font-semibold text-gray-800 dark:text-gray-200">{{ total_proprietaires }}</span> résultats
+          </p>
+      </div>
+      <div>
+          <!-- Boutons de pagination -->
+          <div class="inline-flex gap-x-2">
+              {% if page_obj.has_previous %}
+                  <a href="?page=1" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                      <svg class="w-3 h-3" width="16" height="16" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.506 1.64001L4.85953 7.28646C4.66427 7.48172 4.66427 7.79831 4.85953 7.99357" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      Prev
+                  </a>
+              {% endif %}
+              {% if page_obj.has_next %}
+                  <a href="?page={{ page_obj.next_page_number }}" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                      Next
+                      <svg class="w-3 h-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.50598 2L10.1524 7.64645C10.3477 7.84171 10.3477 8.15829 10.1524 8.35355" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                  </a>
+              {% endif %}
+          </div>
+      </div>
+    </div>
+
+  <!-- Votre code HTML existant pour le reste de la page -->
+
+
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}" class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover-bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+        Next
+        <svg class="w-3 h-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.50598 2L10.1524 7.64645C10.3477 7.84171 10.3477 8.15829 10.1524 8.35355" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    {% endif %}
+  </div>
+
+
             </div>
           </div>
+          
           <!-- End Footer -->
         </div>
       </div>
