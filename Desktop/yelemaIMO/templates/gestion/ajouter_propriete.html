@@ -1,0 +1,72 @@
+
+{% extends '_base.html' %} {% block content %}
+    
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Ajouter une nouvelle propriété</h2>
+        <form method="post" action="{% url 'gestion:ajouter_propriete' %}">
+            {% csrf_token %}
+            <div class="w-full flex items-center justify-center text-blue-600 bg-gray-900">
+                <div>
+                    <h1 class="mb-1 font-bold text-3xl flex gap-1 items-baseline font-mono">Form UI<span class="text-sm text-purple-700">form showcase</span></h1>
+                    <div class="grid max-w-3xl gap-2 py-10 px-8 sm:grid-cols-2 bg-gray-900 rounded-md border-t-4 border-blue-600">
+                        <div class="w-full items-center justify-center grid gap-4 mb-4 sm:grid-cols-2">
+                            <div>
+                                <label for="{{ form.titre.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titre</label>
+                                {{ form.titre }}
+                            </div>
+                            <div>
+                                <label for="{{ form.adresse.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adresse</label>
+                                {{ form.adresse }}
+                            </div>
+                            <div>
+                                <label for="{{ form.description.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                                {{ form.description }}
+                            </div>
+                            <div>
+                                <label for="{{ form.prix.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prix</label>
+                                {{ form.prix }}
+                            </div>
+                            <div>
+                                <label for="{{ form.proprietaire.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Propriétaire</label>
+                                {{ form.proprietaire }}
+                            </div>
+                            <div>
+                                <label for="{{ form.statut.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Statut</label>
+                                {{ form.statut }}
+                            </div>
+                            <div>
+                                <label for="{{ form.type_propriete.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type de propriété</label>
+                                {{ form.type_propriete }}
+                            </div>
+                            <div>
+                                <label for="{{ form.nombre_chambres.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de chambres</label>
+                                {{ form.nombre_chambres }}
+                            </div>
+                            <div>
+                                <label for="{{ form.nombre_salles_bains.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de salles de bains</label>
+                                {{ form.nombre_salles_bains }}
+                            </div>
+                            <div>
+                                <label for="{{ form.surface_m2.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Surface en m²</label>
+                                {{ form.surface_m2 }}
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-sm text-gray-600 dark:text-gray-400">
+                                <button type="submit" class="text-gray-300 inline-flex items-center hover:text-white border border-blue-600 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-900">
+                                    Ajouter propriété
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+{% endblock content %}
+    
+

@@ -13,7 +13,7 @@ class Proprietaire(models.Model):
     
 class Propriete(models.Model):
     titre = models.CharField(max_length=45)
-    adresse = models.TextField(max_length=30)
+    adresse = models.CharField(max_length=30)
     description = models.TextField()
     prix = models.DecimalField(max_digits=10, decimal_places=2)
     proprietaire = models.ForeignKey(Proprietaire, on_delete=models.CASCADE)
@@ -23,9 +23,9 @@ class Propriete(models.Model):
     nombre_salles_bains = models.PositiveIntegerField()
     surface_m2 = models.DecimalField(max_digits=10, decimal_places=2)
     
-
     def __str__(self):
         return self.titre
+
 
 class Caracteristique(models.Model):
     name = models.CharField(max_length=100)

@@ -10,6 +10,7 @@ from .models import Proprietaire, Propriete
 def home(request):
     proprietaires = Proprietaire.objects.all()
     total_proprietaires = Proprietaire.objects.count()
+    total_proprietes = Propriete.objects.count()
 
     paginator = Paginator(proprietaires, 6)
     page_number = request.GET.get('page')
@@ -18,6 +19,7 @@ def home(request):
     context = {
         'proprietaires': page_obj,  # Utilisez page_obj au lieu de proprietaires ici
         'total_proprietaires': total_proprietaires,
+        'total_proprietes':total_proprietes,
         'page_obj': page_obj
     }
 
@@ -91,5 +93,73 @@ def supprimer_proprietaire(request, proprietaire_id):
     
     return render(request, 'gestion/supprimer_proprietaire.html', context={'proprietaire': proprietaire})
 
-
     
+
+from django.shortcuts import render, redirect
+from .forms import ProprieteForm
+from .models import Propriete
+
+def ajouter_propriete(request):
+    if request.method == 'POST':    
+        form = ProprieteForm(request.POST)
+        if form.is_valid():
+            # Créez une nouvelle instance du modèle Propriete avec les données du formulaire        
+            titre = form.cleaned_data['titre']
+            adresse = form.cleaned_data['adresse']
+            description = form.cleaned_data['description']
+            prix = form.cleaned_data['prix']
+            proprietaire = form.cleaned_data['proprietaire']
+            statut = form.cleaned_data['statut']
+            type_propriete = form.cleaned_data['type_propriete']
+            nombre_chambres = form.cleaned_data['nombre_chambres']
+            nombre_salles_bains = form.cleaned_data['nombre_salles_bains']
+            surface_m2 = form.cleaned_data['surface_m2']
+
+            # Enregistrez la nouvelle propriété dans la base de données
+            try:
+                propriete = Propriete.objects.create(
+                    titre=titre,
+                    adresse=adresse,
+                    description=description,
+                    prix=prix,
+                    proprietaire=proprietaire,
+                    statut=statut,
+                    type_propriete=type_propriete,
+                    nombre_chambres=nombre_chambres,
+                    nombre_salles_bains=nombre_salles_bains,
+                    surface_m2=surface_m2
+                )
+                return redirect('gestion:home')
+            except Exception as e:
+                print("Erreur lors de l'enregistrement de la propriété :", e)
+                # Vous pouvez ajouter d'autres messages de débogage si nécessaire
+        else:
+            print("Formulaire invalide :", form.errors)
+    else:
+        form = ProprieteForm()
+
+    context = {'form': form}
+    return render(request, 'gestion/ajouter_propriete.html', context)
+################################ Update propriete ##################################################################
+def update_propriete(request, propriete_id):
+    propriete = get_object_or_404(Propriete, id=propriete_id)
+    
+    if request.method == 'POST':
+        form = ProprieteForm(request.POST, instance=propriete)
+        if form.is_valid():
+            form.save()
+            return redirect('gestion:home')  # Rediriger vers la page d'accueil après la mise à jour
+    else:
+        form = ProprieteForm()  # Remplir le formulaire avec les données existantes
+
+    return render(request, 'gestion/update_propriete.html', context={'form': form})
+
+def supprimer_propriete(request, propriete_id):
+    propriete = get_object_or_404(Propriete, id=propriete_id)
+    
+    if request.method == 'POST':
+        propriete.delete()
+        return redirect('gestion:home')  # Rediriger vers la page d'accueil après la suppression
+    
+    return render(request, 'gestion/supprimer_propriete.html', context={'propriete': propriete})
+
