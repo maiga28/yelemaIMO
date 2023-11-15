@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Proprietaire,Propriete,Caracteristique
+from .models import Proprietaire,Propriete
 from main_apps.gestion.forms import ProprieteForm,ProprietaireForm
 from django.core.paginator import Paginator
 
@@ -8,6 +8,7 @@ from django.shortcuts import render
 from .models import Proprietaire, Propriete
 
 def home(request):
+    proprietes = Propriete.objects.all()
     proprietaires = Proprietaire.objects.all()
     total_proprietaires = Proprietaire.objects.count()
     total_proprietes = Propriete.objects.count()
@@ -17,6 +18,7 @@ def home(request):
     page_obj = paginator.get_page(page_number)
 
     context = {
+        'proprietes':proprietes,
         'proprietaires': page_obj,  # Utilisez page_obj au lieu de proprietaires ici
         'total_proprietaires': total_proprietaires,
         'total_proprietes':total_proprietes,
@@ -163,3 +165,10 @@ def supprimer_propriete(request, propriete_id):
     
     return render(request, 'gestion/supprimer_propriete.html', context={'propriete': propriete})
 
+
+def details_list(request,propriete_id):
+    propriete_details = get_object_or_404(Propriete, id=propriete_id)
+    return render(request,'gestion/details_list.html')
+
+def reservation(request,reservation_id):
+    reservation = get_object_or_404()

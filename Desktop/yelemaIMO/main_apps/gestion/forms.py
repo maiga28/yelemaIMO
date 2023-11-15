@@ -1,5 +1,5 @@
 from django import forms
-from .models import Proprietaire,Propriete,Caracteristique
+from .models import Proprietaire,Propriete
 
 
 

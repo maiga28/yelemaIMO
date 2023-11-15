@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Proprietaire, Propriete, Caracteristique
+from .models import Proprietaire, Propriete
 
 # Register your models here.
 @admin.register(Proprietaire)
@@ -13,7 +13,4 @@ class ProprieteAdmin(admin.ModelAdmin):
     search_fields = ('titre', 'adresse', 'prix', 'proprietaire__name', 'proprietaire__s_name')
     list_per_page = 20
 
-@admin.register(Caracteristique)
-class CaracteristiqueAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'propriete')
-    search_fields = ('name', 'description', 'propriete__titre')
+

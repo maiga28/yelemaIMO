@@ -13,6 +13,7 @@ class Proprietaire(models.Model):
     
 class Propriete(models.Model):
     titre = models.CharField(max_length=45)
+    image = models.ImageField(upload_to='caracteristiques/', blank=True, null=True)
     adresse = models.CharField(max_length=30)
     description = models.TextField()
     prix = models.DecimalField(max_digits=10, decimal_places=2)
@@ -25,14 +26,3 @@ class Propriete(models.Model):
     
     def __str__(self):
         return self.titre
-
-
-class Caracteristique(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    image = models.ImageField(upload_to='caracteristiques/', blank=True, null=True)
-    propriete = models.ForeignKey(Propriete, on_delete=models.CASCADE)
-
-
-    def __str__(self):
-        return self.name
