@@ -174,9 +174,9 @@ def supprimer_propriete(request, propriete_id):
     return render(request, 'gestion/supprimer_propriete.html', context={'propriete': propriete})
 
 
-def details_list(request,propriete_id):
-    propriete_details = get_object_or_404(Propriete, id=propriete_id)
-    return render(request,'gestion/details_list.html')
+def details_list(request, propriete_id):
+    propriete = get_object_or_404(Propriete, id=propriete_id)
+    return render(request, 'gestion/details_list.html', {'propriete': propriete})
 
 def reservation(request,reservation_id):
     reservation = get_object_or_404()

@@ -113,3 +113,4 @@ def reservation(request, propriete_id):
     }
 
     return render(request, 'client/reservation.html', context)
+
