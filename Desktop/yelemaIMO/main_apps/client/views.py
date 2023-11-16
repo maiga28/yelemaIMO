@@ -70,7 +70,9 @@ from .forms import ReservationForm
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Propriete, Reservation, Client
 from .forms import ReservationForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def reservation(request, propriete_id):
     propriete = get_object_or_404(Propriete, pk=propriete_id)
 

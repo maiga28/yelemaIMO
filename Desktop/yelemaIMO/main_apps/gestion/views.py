@@ -6,12 +6,18 @@ from django.core.paginator import Paginator
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Proprietaire, Propriete
+from main_apps.client.models import Client,Reservation
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def home(request):
     proprietes = Propriete.objects.all()
     proprietaires = Proprietaire.objects.all()
     total_proprietaires = Proprietaire.objects.count()
     total_proprietes = Propriete.objects.count()
+    total_client = Client.objects.count()
+    total_reservation = Reservation.objects.count()
 
     paginator = Paginator(proprietaires, 6)
     page_number = request.GET.get('page')
@@ -22,7 +28,9 @@ def home(request):
         'proprietaires': page_obj,  # Utilisez page_obj au lieu de proprietaires ici
         'total_proprietaires': total_proprietaires,
         'total_proprietes':total_proprietes,
-        'page_obj': page_obj
+        'page_obj': page_obj,
+        'total_client':total_client,
+        'total_reservation':total_reservation
     }
 
     return render(request, 'gestion/home.html', context)
