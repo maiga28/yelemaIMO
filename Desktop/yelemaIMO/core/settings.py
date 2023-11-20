@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main_apps.client',
     'main_apps.gestion',
     'main_apps.locateur',
+    'main_apps.gestion_location',
     'allauth',
   #  'allauth.account',
     'allauth.socialaccount',

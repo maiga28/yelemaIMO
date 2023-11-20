@@ -27,5 +27,8 @@ urlpatterns = [
     path('accounts/', include('main_apps.account.urls')),
     path('gestion/', include('main_apps.gestion.urls')),
     path('client/', include('main_apps.client.urls')),
+    path('locateur/', include('main_apps.locateur.urls')),
+    path('location/', include('main_apps.gestion_location.urls')),
+    
     
  ]
