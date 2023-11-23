@@ -178,5 +178,5 @@ def details_list(request, propriete_id):
     propriete = get_object_or_404(Propriete, id=propriete_id)
     return render(request, 'gestion/details_list.html', {'propriete': propriete})
 
-def reservation(request,reservation_id):
-    reservation = get_object_or_404()
+def list_users(request):
+    return render(request,'gestion/list_users.html')

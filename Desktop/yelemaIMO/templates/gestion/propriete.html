@@ -1,0 +1,25 @@
+{% extends 'base2.html' %} {% block content %}
+
+
+<tbody id="todo-results">
+{% for propriete in proprietes %}
+  <tr
+    class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+      {{propriete.title}}
+    </td>
+    <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+      {% if propriete.completed %}
+        <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold">Yes</span>
+      {% else %}
+        <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">No</span>
+      {% endif %}
+    </td>
+  </tr>
+{% endfor %}
+</tbody>
+
+    
+{% endblock content %}
+    
+

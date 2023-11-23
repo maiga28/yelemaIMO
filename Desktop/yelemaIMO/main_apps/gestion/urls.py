@@ -6,6 +6,7 @@ app_name = 'gestion'
 urlpatterns = [
     
     path('', views.home, name='home'),
+    path('list_users/', views.list_users, name='users'),
     path('ajouter_proprietaire/', views.ajouter_proprietaire, name='ajouter_proprietaire'),
     path('update_proprietaire/<int:proprietaire_id>/', views.update_proprietaire, name='update_proprietaire'),
     path('supprimer_proprietaire/<int:proprietaire_id>/', views.supprimer_proprietaire, name='supprimer_proprietaire'),

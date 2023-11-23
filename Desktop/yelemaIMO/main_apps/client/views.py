@@ -96,7 +96,7 @@ def reservation(request, propriete_id):
                 propriete.statut = 'indisponible'
                 propriete.save()
 
-                return redirect('gestion:home')  # Redirige vers une page de confirmation de réservation
+                return redirect('locateur:lien_conf')  # Redirige vers une page de confirmation de réservation
             except Exception as e:
                 print("Erreur lors de l'enregistrement de la propriété :", e)
                 # Vous pouvez ajouter d'autres messages de débogage si nécessaire

@@ -5,7 +5,6 @@ app_name = 'locateur'
 
 urlpatterns = [
     
-    path('', views.locateur, name='locateur'),
-    path('login_locateur/',views.login_locateur, name='login_locateur'),
+    path('',views.lien_conf, name='lien_conf'),
     
     ]

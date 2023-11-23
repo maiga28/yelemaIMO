@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import index,team,about,contact
+from .views import index,team,about,contact,search
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('search/', search, name='search'),  # new
     path('team/', team, name='team'),
     path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
@@ -27,8 +30,9 @@ urlpatterns = [
     path('accounts/', include('main_apps.account.urls')),
     path('gestion/', include('main_apps.gestion.urls')),
     path('client/', include('main_apps.client.urls')),
-    path('locateur/', include('main_apps.locateur.urls')),
     path('location/', include('main_apps.gestion_location.urls')),
+    path('locateur/', include('main_apps.locateur.urls')),
+    
     
     
  ]

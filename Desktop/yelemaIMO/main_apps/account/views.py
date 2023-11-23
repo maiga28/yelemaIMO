@@ -3,11 +3,53 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from .forms import LoginForm, SignUpForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import LoginForm
 from django.contrib.auth.models import User
+
+from django.shortcuts import render, redirect,get_object_or_404
+from .forms import ProfileUpdateForm
+
+# Create your views here.
+from django.shortcuts import render
+from .models import Profile as UserProfile
+
+@login_required
+def profile_view(request,pk):
+    user = get_object_or_404(UserProfile,pk=pk)
+    context = {
+        'user':user
+        } 
+    return render(request, 'account/user_profile.html', context)
+######################################     une vue de mise à jour de profil et un formulaire de modification de profil.   ###############################################################
+@login_required
+def update_user(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile_view')
+
+    else:
+        form = ProfileUpdateForm(instance=user)
+
+    return render(request, 'account/update_user.html', {'form': form})
+
+@login_required
+def delete_user(request,pk):
+    user = get_object_or_404(User,pk=pk)
+    if request.method == 'POST':
+        user.delete()
+        return redirect('account:profile_view')
+    else:
+        user = User
+    return render(request, 'account/delete_user.html', {'user':user})
+
 
 def login_view(request):
     form = LoginForm(request.POST or None)
