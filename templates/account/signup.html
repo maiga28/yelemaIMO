@@ -30,26 +30,26 @@
             <div class="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:border-gray-200 before:mr-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ml-6 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600">Or</div>
 
             <!-- Form -->
-            <form class="grid gap-y-4" method="post" >
+            <form class="grid gap-y-4" method="post">
               {% csrf_token %}
               <div>
-                  <label for="{{ form.email.id_for_label }}" class="block text-sm mb-2 dark:text-white">Email address</label>
+                  <label for="id_email" class="block text-sm mb-2 dark:text-white">Email address</label>
                   {{ form.email }}
               </div>
               <div>
-                  <label for="{{ form.password.id_for_label }}" class="block text-sm mb-2 dark:text-white">Password</label>
+                  <label for="id_password" class="block text-sm mb-2 dark:text-white">Password</label>
                   {{ form.password }}
               </div>
               <div>
-                  <label for="{{ form.confirm_password.id_for_label }}" class="block text-sm mb-2 dark:text-white">Confirm Password</label>
+                  <label for="id_confirm_password" class="block text-sm mb-2 dark:text-white">Confirm Password</label>
                   {{ form.confirm_password }}
               </div>
               <div class="flex items-center">
                   {{ form.remember_me }}
-                  <label for="{{ form.remember_me.id_for_label }}" class="text-sm dark:text-white">I accept the <a class="text-blue-600 decoration-2 hover:underline font-medium" href="#">Terms and Conditions</a></label>
+                  <label for="id_remember_me" class="text-sm dark:text-white">I accept the <a class="text-blue-600 decoration-2 hover:underline font-medium" href="#">Terms and Conditions</a></label>
               </div>
               <button type="submit" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">Sign up</button>
-          </form>
+            </form>
           
           
           

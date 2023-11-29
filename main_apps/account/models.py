@@ -11,13 +11,13 @@ from django.contrib.auth.models import AbstractUser,AnonymousUser
 
 
 ROLE_CHOICES = [
+    
+    
         ('client', 'Client'),
         ('employe', 'Employé'),
         # Ajoutez d'autres rôles au besoin
         
     ]
-
-
 
 class Admiuser(AbstractUser):
     user = models.OneToOneField('self', on_delete=models.CASCADE, verbose_name="My Custom Field", null=True, blank=True)

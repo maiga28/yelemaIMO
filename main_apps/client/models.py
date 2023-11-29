@@ -6,6 +6,8 @@ from main_apps.account.models import Admiuser
 class Client(models.Model):
     name = models.CharField(max_length=30, null=True, blank=True)
     email = models.EmailField(unique=True, null=True, blank=True)
+    image = models.ImageField(upload_to='image/')
+    tell = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name

@@ -11,10 +11,12 @@ from django.contrib.auth.models import AbstractUser
 from dateutil.parser import parse as parse_datetime
 
 class Employe(models.Model):
+    
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='employes_user')
     name = models.CharField(max_length=255)
     prenom = models.CharField(max_length=255)
-    poste = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='image/')
+    poste = models.CharField(max_length=255, unique=True, blank=False)
     domicile = models.CharField(max_length=255)
     tell = models.CharField(max_length=255)
     adresse = models.CharField(max_length=255)

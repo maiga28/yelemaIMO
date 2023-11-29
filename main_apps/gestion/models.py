@@ -4,8 +4,10 @@ from string import ascii_lowercase as lets
 
 # Create your models here.
 class Proprietaire(models.Model):
+    
     name = models.CharField(max_length=45)
     s_name = models.CharField(max_length=45)
+    image = models.ImageField(upload_to='image/')
     adresse = models.CharField(max_length=30)
     numero_telephone = models.CharField(max_length=15)
     email = models.EmailField(unique=True)
@@ -44,7 +46,7 @@ class ProprieteManager(models.Manager):
 
 class Propriete(models.Model):
     titre = models.CharField(max_length=45)
-    image = models.ImageField(upload_to='caracteristiques/', blank=True, null=True)
+    image = models.ImageField(upload_to='media/', blank=True, null=True)
     adresse = models.CharField(max_length=30)
     description = models.TextField()
     prix = models.DecimalField(max_digits=10, decimal_places=2)
@@ -59,3 +61,9 @@ class Propriete(models.Model):
     
     def __str__(self):
         return self.titre
+    
+class Contrat_bail(models.Model):
+    propriete = models.ForeignKey(Propriete, on_delete=models.CASCADE, null=False,blank=True)
+    debut = models.DateTimeField(auto_now_add=True)
+    fin = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

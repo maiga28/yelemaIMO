@@ -10,6 +10,11 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import LoginForm
 from .models import Admiuser
+from django.utils.encoding import force_str
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect, HttpResponse
+from django.utils.http import urlsafe_base64_decode
+from django.contrib.auth.tokens import default_token_generator
 
 
 from django.shortcuts import render, redirect,get_object_or_404
@@ -83,16 +88,41 @@ def login_view(request):
     return render(request, "account/login.html", {"form": form, "msg": msg})
 
 from django.core.mail import send_mail
-from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
-from django.template.loader import render_to_string
+from django.contrib.auth.tokens import default_token_generator
+
+from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
-from .tokens import account_activation_token
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Admiuser
+
+# Import necessary modules
 
 
+# Define the send_verification_email function
+
+
+
+from .models import Admiuser
+from .forms import SignUpForm
+from django.shortcuts import render, redirect
+
+from django.core.mail import send_mail
+
+def send_verification_email(request, user):
+    # Personnalisez le contenu de l'e-mail de vérification
+    subject = 'Email Verification'
+    message = 'Please verify your email address by clicking on the link.'
+    from_email = 'maiga@yelema.tech'  # Remplacez par votre adresse e-mail ou utilisez une dédiée pour envoyer des e-mails
+    to_email = user.email
+
+    send_mail(subject, message, from_email, [to_email], fail_silently=False)
+    # Vous pouvez également ajouter ici des logs pour vérifier si cette fonction est appelée avec succès
 
 def register(request):
     msg = None
@@ -104,36 +134,26 @@ def register(request):
             username = form.cleaned_data.get("username")
             email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
-            
-            user = Admiuser.objects.create_user(username=email, email=email, password=password)
-            
-            token = account_activation_token.make_token(user)
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
-            verification_link = f"http://votre_site.com/verification/{uid}/{token}/"
 
-            subject = 'Veuillez vérifier votre adresse e-mail'
-            message = render_to_string('account/email_verification.html', {
-                'user': user,
-                'verification_link': verification_link,
-            })
-            user.email_user(subject, message)
-            
-            msg = 'User created successfully.'
+            # Create user with provided username, email, and password
+            user, created = Admiuser.objects.get_or_create(username=email, email=email, password=password)
+
+            # Send verification email
+            send_verification_email(request, user)  # Appel à la fonction pour envoyer l'e-mail de vérification
+
+            msg = 'User created successfully. Please check your email for verification.'
             success = True
-            return redirect('account:login')  # Redirect the user to the login page after registration
-
+            return redirect('account:login')
     else:
+        # Le reste de votre code existant pour la gestion de la requête GET
         form = SignUpForm()
 
     return render(request, "account/signup.html", {"form": form, "msg": msg, "success": success})
 
+
 # account/views.py
 
-from django.utils.encoding import force_str
-from django.contrib.auth.models import User
-from django.shortcuts import render, redirect, HttpResponse
-from django.utils.http import urlsafe_base64_decode
-from django.contrib.auth.tokens import default_token_generator
+
 
 def verify_email(request, uidb64, token):
     try:
