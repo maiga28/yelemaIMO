@@ -113,6 +113,7 @@ from .forms import SignUpForm
 from django.shortcuts import render, redirect
 
 from django.core.mail import send_mail
+#from .decorators import user_not_authenticated
 
 def send_verification_email(request, user):
     # Personnalisez le contenu de l'e-mail de vérification
@@ -123,7 +124,12 @@ def send_verification_email(request, user):
 
     send_mail(subject, message, from_email, [to_email], fail_silently=False)
     # Vous pouvez également ajouter ici des logs pour vérifier si cette fonction est appelée avec succès
-
+    
+    
+#def activateEmail(request, user, to_email):
+#    messages.success(request, f'Dear <b>{user}</b>, please go to your email <b>{to_email}</b> inbox and click on\
+#       recieved activation link to confirm and complete the registration. <b>Note:</b> Check your spam folder. ')    
+#@user_not_authenticated
 def register(request):
     msg = None
     success = False
@@ -134,7 +140,9 @@ def register(request):
             username = form.cleaned_data.get("username")
             email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
-
+            
+#            user = form.save(commit=False)
+#
             # Create user with provided username, email, and password
             user, created = Admiuser.objects.get_or_create(username=email, email=email, password=password)
 
