@@ -194,8 +194,6 @@ STATICFILES_FINDERS = [
 # settings.py
 AUTH_USER_MODEL = 'account.Admiuser'
 
-# settings.py
-#<@>Yelema23<@>
 
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.titan.email'
