@@ -42,7 +42,6 @@ L'application Yelema Immo sera développée en utilisant les technologies suivan
 - **CSS Framework :** Tailwind CSS
 - **Base de données :** PostgreSQL
 - **Authentification :** JWT (JSON Web Tokens)
-
 ## Configuration et Installation
 
 1. **Installer les Dépendances**
