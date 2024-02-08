@@ -38,7 +38,6 @@ L'application Yelema Immo vise à fournir une plateforme de gestion immobilière
 L'application Yelema Immo sera développée en utilisant les technologies suivantes :
 
 - **Backend :** Django
-- **Frontend :** React
 - **CSS Framework :** Tailwind CSS
 - **Base de données :** PostgreSQL
 - **Authentification :** JWT (JSON Web Tokens)
